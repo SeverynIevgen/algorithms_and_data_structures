@@ -54,6 +54,7 @@ public class Homework2 {
         scanner.close();
     }
 
+//  Выбор номера задания:    
     private static void menu() {
         System.out.println("\nChoose the number of task:");
         for (int i = 1; i <= TASK_AMOUNT; i++)
