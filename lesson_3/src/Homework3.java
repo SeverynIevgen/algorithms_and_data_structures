@@ -24,10 +24,10 @@ public class Homework3 {
 //                    System.out.println("Task 1:");
 //                    task1();
 //                    break;
-//                case 2:
-//                    System.out.println("Task 2:");
-//                    task2();
-//                    break;
+                case 2:
+                    System.out.println("Task 2:");
+                    task2();
+                    break;
 //                case 3:
 //                    System.out.println("Task 3:");
 //                    task3();
@@ -57,9 +57,33 @@ public class Homework3 {
         System.out.println("Or print 0 for exit");
     }
 
-//    private static void task4() {
-//
-//    }
+//  2. *Реализовать шейкерную сортировку.
+    private static void task2() {
+        int[] array = new int[ARRAY_SIZE];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(ARRAY_SIZE);
+        }
+        System.out.println("Array before sorting:");
+        System.out.print(Arrays.toString(array) + "\n");
+        for (int i = 0; i < array.length; i++) {
+            for (int j = i + 1; j < array.length - i; j++) {
+                if (array[j - 1] > array[j]) {
+                    int temp = array[j];
+                    array[j] = array[j - 1];
+                    array[j - 1] = temp;
+                }
+            }
+            for (int k = array.length - 2 - i; k > i; k--) {
+                if (array[k - 1] > array[k]) {
+                    int temp = array[k];
+                    array[k] = array[k - 1];
+                    array[k - 1] = temp;
+                }
+            }
+        }
+        System.out.println("Array after sorting:");
+        System.out.print(Arrays.toString(array));
+    }
 
 //  5. **Реализовать сортировку вставками, используя бинарный поиск.
     private static void task5() {
@@ -99,9 +123,9 @@ public class Homework3 {
             }
         }
         System.out.println("Array before sorting:");
-        System.out.print(Arrays.toString(arrayBefore) + "\n");
+        System.out.println(Arrays.toString(arrayBefore));
         System.out.println("Array after sorting:");
-        System.out.print(Arrays.toString(arrayAfter));
+        System.out.println(Arrays.toString(arrayAfter));
     }
 
 }
